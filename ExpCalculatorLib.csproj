@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0D7D638B-C337-4480-90CF-8575242139AC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ExpCalculatorLib</RootNamespace>
+    <AssemblyName>ExpCalculatorLib</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EnablePropertyAttribute.cs" />
+    <Compile Include="Exceptions\EvaluationErrorException.cs" />
+    <Compile Include="Exceptions\ExpressionException.cs" />
+    <Compile Include="Exceptions\GenericTypeNotResolvedException.cs" />
+    <Compile Include="Exceptions\SemanticErrorException.cs" />
+    <Compile Include="Exceptions\SyntaxErrorException.cs" />
+    <Compile Include="Expression\AndExpression.cs" />
+    <Compile Include="Expression\ConvertToStringExpression.cs" />
+    <Compile Include="Expression\ConvertToDoubleExpression.cs" />
+    <Compile Include="Expression\DifferentExpresstion.cs" />
+    <Compile Include="Expression\DivideExpression.cs" />
+    <Compile Include="Expression\ExponentiationExpression.cs" />
+    <Compile Include="ExpressionParser.cs" />
+    <Compile Include="Expression\BooleanExpression.cs" />
+    <Compile Include="Expression\BooleanLiteralExpression.cs" />
+    <Compile Include="Expression\EqualsExpression.cs" />
+    <Compile Include="Expression\ExpressionHelper.cs" />
+    <Compile Include="Expression\FunctionExpression.cs" />
+    <Compile Include="Expression\IdentifierExpression.cs" />
+    <Compile Include="Expression\IExpectedTypeExpression.cs" />
+    <Compile Include="Expression\IExpression.cs" />
+    <Compile Include="Expression\LambdaExpression.cs" />
+    <Compile Include="Expression\NumericExpression.cs" />
+    <Compile Include="Expression\NumericLiteralExpression.cs" />
+    <Compile Include="Expression\ParameterExpression.cs" />
+    <Compile Include="Expression\PropertyAccessExpression.cs" />
+    <Compile Include="Expression\StringExpression.cs" />
+    <Compile Include="Expression\StringLiteralExpression.cs" />
+    <Compile Include="Expression\GreaterThanExpression.cs" />
+    <Compile Include="Expression\GreaterThanOrEqualExpression.cs" />
+    <Compile Include="Expression\LessThanExpression.cs" />
+    <Compile Include="Expression\LessThanOrEqualExpression.cs" />
+    <Compile Include="Expression\MinusExpression.cs" />
+    <Compile Include="Expression\ModExpression.cs" />
+    <Compile Include="Expression\MultiplyExpression.cs" />
+    <Compile Include="Expression\UnaryMinusExpression.cs" />
+    <Compile Include="Functions.cs" />
+    <Compile Include="MethodInvoker.cs" />
+    <Compile Include="Expression\OrExpression.cs" />
+    <Compile Include="Expression\PlusExpression.cs" />
+    <Compile Include="Parameter.cs" />
+    <Compile Include="ParsingContext.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tokenizer\BooleanLiteralToken.cs" />
+    <Compile Include="Tokenizer\CloseParenthesisToken.cs" />
+    <Compile Include="Tokenizer\CommaToken.cs" />
+    <Compile Include="Tokenizer\DotToken.cs" />
+    <Compile Include="Tokenizer\EndToken.cs" />
+    <Compile Include="Tokenizer\EToken.cs" />
+    <Compile Include="Tokenizer\IdentifierToken.cs" />
+    <Compile Include="Tokenizer\IToken.cs" />
+    <Compile Include="Tokenizer\LambdaInvokeToken.cs" />
+    <Compile Include="Tokenizer\NumberLiteralToken.cs" />
+    <Compile Include="Tokenizer\OpenParenthesisToken.cs" />
+    <Compile Include="Tokenizer\OperatorToken.cs" />
+    <Compile Include="Tokenizer\OuToken.cs" />
+    <Compile Include="Tokenizer\StringLiteralToken.cs" />
+    <Compile Include="Tokenizer\TokenParser.cs" />
+    <Compile Include="Visitor\VisitorBase.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Grammar.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
